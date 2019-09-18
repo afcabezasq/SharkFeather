@@ -1,0 +1,7 @@
+organization=afcabezasq
+projectKey=afcabezasq_SharkFeather
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.678
+dashboardUrl=https://sonarcloud.io/dashboard?id=afcabezasq_SharkFeather
+ceTaskId=AW1FF7oYfXzoifaWkay0
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AW1FF7oYfXzoifaWkay0
