@@ -1,9 +1,0 @@
-package com.revature.delegates;
-
-import com.revature.services.SurveyRequestService;
-
-public class SurveyRequestDelegate {
-	
-	SurveyRequestService  srs = new SurveyRequestService();
-
-}
