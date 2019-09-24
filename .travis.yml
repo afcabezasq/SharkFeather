@@ -4,7 +4,7 @@ addons:
   sonarcloud:
     organization: "afcabezasq"
     token:
-      secure: keyShark # encrypted value of your token
+      secure: $keyShark # encrypted value of your token
 
 before_script: cd Pruebas/HelloWorld1
 script:
