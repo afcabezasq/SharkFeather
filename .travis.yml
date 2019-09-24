@@ -3,10 +3,9 @@ language: java
 addons:
   sonarcloud:
     organization: "afcabezasq"
-    token:
-      secure: $keyShark # encrypted value of your token
+    
 
 before_script: cd Pruebas/HelloWorld1
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=afcabezasq_SharkFeather
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=keyShark
