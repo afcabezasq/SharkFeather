@@ -1,0 +1,74 @@
+   Id | Severity   | CVE            | Package Name   | Package Version   | Status                     | Description
+------+------------+----------------+----------------+-------------------+----------------------------+----------------------------------------------------
+   49 | low        | NODE-          | minimist       | 0.0.8             | fixed in >=0.2.1 <1.0.0 || | Affected versions of `minimist` are vulnerable to
+      |            | SECURITY-1179  |                |                   | >=1.2.3                    | prototype pollution. Arguments are not properly
+      |            |                |                |                   |                            | sanitized, allowing an attacker to modify the
+      |            |                |                |                   |                            | prototype of `Object`, causing the addition or
+      |            |                |                |                   |                            | modification of an existing property that will
+      |            |                |                |                   |                            | exist on all objects.   Parsing the argument
+      |            |                |                |                   |                            | `--__proto__.y=Polluted` adds a `y` property with
+      |            |                |                |                   |                            | value `Polluted` to all objects. The argument
+      |            |                |                |                   |                            | `--__proto__=Polluted` raises and uncaught error
+      |            |                |                |                   |                            | and crashes the application.   This is exploitable
+      |            |                |                |                   |                            | if attackers have control over the arguments being
+      |            |                |                |                   |                            | passed to `minimist`.
+   49 | low        | NODE-          | vue-moment     | 4.0.0             | fixed in >=4.1.0           | Versions of `vue-moment` prior to 4.1.0 contain an
+      |            | SECURITY-1425  |                |                   |                            | Outdated Static Dependency. The package depends on
+      |            |                |                |                   |                            | `moment` and has it loaded statically instead of
+      |            |                |                |                   |                            | as a dependency that can be updated. It has
+      |            |                |                |                   |                            | `moment@2.19.1` that contains a Regular Expression
+      |            |                |                |                   |                            | Denial of Service vulnerability.
+   49 | low        | NODE-          | minimist       | 1.2.0             | fixed in >=0.2.1 <1.0.0 || | Affected versions of `minimist` are vulnerable to
+      |            | SECURITY-1179  |                |                   | >=1.2.3                    | prototype pollution. Arguments are not properly
+      |            |                |                |                   |                            | sanitized, allowing an attacker to modify the
+      |            |                |                |                   |                            | prototype of `Object`, causing the addition or
+      |            |                |                |                   |                            | modification of an existing property that will
+      |            |                |                |                   |                            | exist on all objects.   Parsing the argument
+      |            |                |                |                   |                            | `--__proto__.y=Polluted` adds a `y` property with
+      |            |                |                |                   |                            | value `Polluted` to all objects. The argument
+      |            |                |                |                   |                            | `--__proto__=Polluted` raises and uncaught error
+      |            |                |                |                   |                            | and crashes the application.   This is exploitable
+      |            |                |                |                   |                            | if attackers have control over the arguments being
+      |            |                |                |                   |                            | passed to `minimist`.
+   49 | low        | CVE-2020-15095 | npm            | 6.13.4            | fixed in >=6.14.6          | Versions of the npm CLI prior to 6.14.6 are
+      |            |                |                |                   |                            | vulnerable to an information exposure
+      |            |                |                |                   |                            | vulnerability through log files. The CLI supports
+      |            |                |                |                   |                            | URLs like \"<protocol>://[<user>[:<password>]@]<ho
+      |            |                |                |                   |                            | stname>[:<port>][:][/]<path>\". The password value
+      |            |                |                |                   |                            | is not redacted and is printed to stdout and also
+      |            |                |                |                   |                            | to any generated log files.
+   49 | low        | NODE-          | mem            | 1.1.0             | fixed in >=4.0.0           | Versions of `mem` prior to 4.0.0 are vulnerable to
+      |            | SECURITY-1084  |                |                   |                            | Denial of Service (DoS).  The package fails to
+      |            |                |                |                   |                            | remove old values from the cache even after a
+      |            |                |                |                   |                            | value passes its `maxAge` property. This may allow
+      |            |                |                |                   |                            | attackers to exhaust the system\'s memory if they
+      |            |                |                |                   |                            | are able to abuse the application logging.
+   49 | high       | NODE-          | js-yaml        | 3.7.0             | fixed in >=3.13.1          | Versions of `js-yaml` prior to 3.13.1 are
+      |            | SECURITY-813   |                |                   |                            | vulnerable to Code Injection. The `load()`
+      |            |                |                |                   |                            | function may execute arbitrary code injected
+      |            |                |                |                   |                            | through a malicious YAML file. Objects that have
+      |            |                |                |                   |                            | `toString` as key, JavaScript code as value and
+      |            |                |                |                   |                            | are used as explicit mapping keys allow attackers
+      |            |                |                |                   |                            | to execute the supplied code through the `load()`
+      |            |                |                |                   |                            | function. The `safeLoad()` function is unaffected.
+      |            |                |                |                   |                            | An example payload is  `{ toString:
+      |            |                |                |                   |                            | !<tag:yaml.org,2002:js/function> \'function
+      |            |                |                |                   |                            | (){return Date.now()}\' } : 1`  which returns the
+      |            |                |                |                   |                            | object  {   \"1553107949161\": 1 }
+   49 | moderate   | NODE-          | js-yaml        | 3.7.0             | fixed in >=3.13.0          | Versions of `js-yaml` prior to 3.13.0 are
+      |            | SECURITY-788   |                |                   |                            | vulnerable to Denial of Service. By parsing a
+      |            |                |                |                   |                            | carefully-crafted YAML file, the node process
+      |            |                |                |                   |                            | stalls and may exhaust system resources leading to
+      |            |                |                |                   |                            | a Denial of Service.
+
+
+
+Number of Compliance Vulnerabilites: 1
+
+   Critical |   High |   Medium |   Low
+------------+--------+----------+-------
+          0 |      1 |        0 |     0
+
+
+ Id   | Severity   | CVE   | Package Name   | Package Version   | Status   | Description
+------+------------+-------+----------------+-------------------+----------+---------------
