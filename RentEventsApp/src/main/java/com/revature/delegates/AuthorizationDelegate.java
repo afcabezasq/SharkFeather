@@ -1,5 +1,6 @@
 package com.revature.delegates;
 
+import io.github.pixee.security.Newlines;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -65,7 +66,7 @@ public class AuthorizationDelegate {
 			String token = u.getId()+":"+udao.getUserRole(u);
 			log.info(u.getId()+udao.getUserRole(u));
 			response.setStatus(200);
-			response.setHeader("Authorization", token);
+			response.setHeader("Authorization", Newlines.stripAll(token));
 			log.info("authorized");
 		}else {
 			
